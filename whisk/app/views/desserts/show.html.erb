@@ -1,8 +1,10 @@
+<% if current_user %>
 <div class="links">
   <ul>
 <li><%= link_to "Add Recipe", new_dessert_recipe_path(@dessert) %></li>
   </ul>
 </div>
+<%end%>
 
 
 <h3><%= @dessert.name %></h3>
