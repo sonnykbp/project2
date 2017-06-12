@@ -1,2 +1,6 @@
-<h1>Desserts#edit</h1>
-<p>Find me in app/views/desserts/edit.html.erb</p>
+<h2>Edit Dessert</h2>
+
+
+<%= render 'form' %>
+
+<%= link_to 'Delete!', dessert_path(@dessert), method: :delete, class: 'delete' %>

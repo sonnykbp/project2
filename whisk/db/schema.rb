@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20170609155933) do
   enable_extension "plpgsql"
 
   create_table "desserts", force: :cascade do |t|
-    t.string "type"
+    t.string "name"
     t.string "dessert_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -34,10 +34,11 @@ ActiveRecord::Schema.define(version: 20170609155933) do
   create_table "recipes", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.text "ingredients"
+    t.text "ingredients", array: true
     t.text "direction"
     t.integer "preptime"
     t.integer "cooktime"
+    t.string "recipe_image"
     t.bigint "dessert_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

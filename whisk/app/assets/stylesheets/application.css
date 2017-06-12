@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+
+img {
+  height: 400pz;
+  border-radius: 10%;
+}
+
+a.fav {
+  text-decoration: none;
+  color: red;
+}
+
+a.no-fav {
+  text-decoration: none;
+  color: black;
+}

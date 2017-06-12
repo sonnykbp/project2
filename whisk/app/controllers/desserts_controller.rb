@@ -1,22 +1,43 @@
 class DessertsController < ApplicationController
   def index
-  end
+      @desserts = Dessert.all
+      # @desserts = Dessert.all.order('name ASC')
+    end
 
-  def new
-  end
+    def show
+      @dessert = Dessert.find(params[:id])
+    end
 
-  def create
-  end
+    def new
+      @dessert = Dessert.new
+    end
 
-  def show
-  end
+    def create
+      @dessert = Dessert.create(dessert_params)
+      redirect_to desserts_path, notice: "You created a new #{@dessert.name}."
 
-  def edit
-  end
+    end
 
-  def update
-  end
+    def edit
+      @dessert = Dessert.find(params[:id])
+    end
 
-  def destroy
-  end
+    def update
+      @dessert = Dessert.find(params[:id])
+      @dessert.update(dessert_params)
+      redirect_to dessert_path(@dessert), notice: "You updated #{@dessert.name}."
+
+    end
+
+    def destroy
+      @dessert = Dessert.find(params[:id])
+      @dessert.destroy
+      redirect_to desserts_path, notice: "You deleted #{@dessert.name}."
+
+    end
+
+    private
+    def dessert_params
+      params.require(:dessert).permit(:name, :dessert_image)
+    end
 end

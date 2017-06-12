@@ -1,2 +1,16 @@
-<h1>Desserts#show</h1>
-<p>Find me in app/views/desserts/show.html.erb</p>
+<div class="links">
+  <ul>
+<li><%= link_to "Edit Dessert", edit_dessert_path(@dessert) %></li>
+<li><%= link_to "Delete Dessert", dessert_path(@dessert), :method => :delete %></li>
+<li><%= link_to "Add Recipe", new_dessert_recipe_path(@dessert) %></li>
+  </ul>
+</div>
+
+
+<h3><%= @dessert.name %></h3>
+<img src="<%= @dessert.dessert_image %>">
+
+<% @dessert.recipes.each do |recipe| %>
+  <p><%= link_to recipe.name, dessert_recipe_path(@dessert, recipe) %></p>
+  <img src="<%= recipe.recipe_image %>">
+<%end%>

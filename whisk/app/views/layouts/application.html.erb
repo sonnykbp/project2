@@ -9,6 +9,25 @@
   </head>
 
   <body>
+    <h1><%= link_to "Whisk!", root_path %></h1>
+
+    <div class="user-info">
+      <% if current_user %>
+        Welcome, <%= current_user.email %>
+        <%= link_to 'Signout', destroy_user_session_path, :method => :delete %>
+      <% else %>
+        <%= link_to 'Signup', new_user_registration_path %>
+        <%= link_to 'Login', new_user_session_path %>
+      <% end %>
+    </div>
+    
+  <nav>
+    <ul>
+      <li><%= link_to "All Desserts", desserts_path %></li>
+      <li><%= link_to "Add New Dessert", new_dessert_path %></li>
+      <li><%= link_to "All Recipes", recipes_path %></li>
+    </ul>
+  </nav>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

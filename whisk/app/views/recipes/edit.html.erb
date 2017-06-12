@@ -1,2 +1,7 @@
-<h1>Recipes#edit</h1>
-<p>Find me in app/views/recipes/edit.html.erb</p>
+<h2>Edit <%= @recipe.name  %> </h2>
+
+<div class="edit-form">
+  <%= render "form"  %>
+</div>
+
+<%= link_to "Back", root_path  %>
