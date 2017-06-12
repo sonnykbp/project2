@@ -1,18 +1,18 @@
 Rails.application.routes.draw do
-  get 'reviews/index'
-
-  get 'reviews/show'
-
-  get 'reviews/new'
-
-  get 'reviews/create'
-
-  get 'reviews/edit'
-
-  get 'reviews/update'
-
-  get 'reviews/destroy'
-
+  # get 'reviews/index'
+  #
+  # get 'reviews/show'
+  #
+  # get 'reviews/new'
+  #
+  # get 'reviews/create'
+  #
+  # get 'reviews/edit'
+  #
+  # get 'reviews/update'
+  #
+  # get 'reviews/destroy'
+  #
   get 'users/index'
 
   get 'users/show'
@@ -23,7 +23,9 @@ Rails.application.routes.draw do
   root to: 'desserts#index'
 
   resources :desserts do
-    resources :recipes
+    resources :recipes do
+      resources :reviews
+    end
   end
 
   resources :recipes, only: [:index, :show] do

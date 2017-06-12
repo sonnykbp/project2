@@ -24,3 +24,20 @@
 </ul>
 <%end%>
 <p><%= @recipe.direction %></p>
+
+
+<h2>Reviews:</h2>
+
+<%= link_to "Add review", new_dessert_recipe_review_path(@recipe.dessert_id, @recipe) %>
+
+
+
+<% @recipe.reviews.each do |review|%>
+<p><%= review.body %></p>
+<p>By: <%= review.user.username %>
+<% if review.user == current_user %>
+<%= link_to "Edit review", edit_dessert_recipe_review_path(@recipe.dessert_id, @recipe, review) %>
+<%= link_to "Delete review", dessert_recipe_review_path(@recipe.dessert_id, @recipe, review), :method => :delete %>
+<%else%>
+<%end%>
+<%end%>

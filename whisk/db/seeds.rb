@@ -8,6 +8,7 @@
 
 Dessert.destroy_all
 Recipe.destroy_all
+Review.destroy_all
 
 
 
@@ -27,3 +28,6 @@ apple_crumb_pie = Recipe.create!(name: "Apple Crumb Pie", description: "You can 
 Place sliced apples in a large bowl. Sprinkle with lemon juice if desired. In a small bowl, mix together white sugar, 2 tablespoons flour, cinnamon, and nutmeg. Sprinkle mixture over apples. Toss until apples are evenly coated. Stir in raisins and walnuts if desired. Spoon mixture into pastry shell.
 In a small bowl mix together 1/2 cup flour and brown sugar. Cut in butter or margarine until mixture is crumbly. Sprinkle mixture over apple filling. Cover top loosely with aluminum foil.
 Bake in preheated oven for 25 minutes. Remove foil and bake an additional 25 to 30 minutes, until top is golden brown. Cool on a wire rack.", preptime: 30, cooktime: 60, recipe_image: "http://assets.kraftfoods.com/recipe_images/opendeploy/54069_640x428.jpg", dessert: pies_tarts, user: sonnykbp)
+
+
+first_review = Review.create!(body: "Awesome recipe!", recipe: brown_butter_cookies, user: sonnykbp)
