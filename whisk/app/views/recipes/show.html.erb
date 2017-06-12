@@ -1,7 +1,10 @@
+<% if @recipe.user == current_user %>
 <ul>
   <li><%= link_to "Edit Recipe", edit_dessert_recipe_path(@recipe.dessert_id, @recipe) %></li>
   <li><%= link_to "Delete Recipe", dessert_recipe_path(@recipe), :method => :delete %></li>
 </ul>
+<%else%>
+<%end%>
 
 
 <h1><%=@recipe.name%>
@@ -12,7 +15,7 @@
   <% end %>
 </h1>
 <img src="<%= @recipe.recipe_image %>">
-<p>Recipe by: </p>
+<p>Recipe by: <%= @recipe.user.username %></p>
 <p><%= @recipe.description %></p>
 <p>Prep-time: <%= @recipe.preptime %>, Cook-time: <%= @recipe.cooktime %></p>
 <% @recipe.ingredients.each do |ingredient| %>

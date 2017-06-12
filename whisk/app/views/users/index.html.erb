@@ -1,0 +1,16 @@
+<h2>Welcome <%= current_user.username %></h2>
+<p>Here are your personal recipes:</p>
+
+<% @recipe.each do |recipe| %>
+  <ul>
+  <li><%= recipe.name %></li>
+</ul>
+<%end %>
+
+
+<p>Here are your favorite recipes:</p>
+<% @favorite.each do |favorite| %>
+  <ul>
+  <li><%= favorite.recipe.name %></li>
+</ul>
+<%end %>
