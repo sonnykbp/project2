@@ -1,23 +1,30 @@
+<div class="links">
 <% if @recipe.user == current_user %>
 <ul>
-  <li><%= link_to "Edit Recipe", edit_dessert_recipe_path(@recipe.dessert_id, @recipe) %></li>
-  <li><%= link_to "Delete Recipe", dessert_recipe_path(@recipe), :method => :delete %></li>
+  <li>&#8212<%= link_to "Edit Recipe", edit_dessert_recipe_path(@recipe.dessert_id, @recipe) %>&#8212</li>
+  <li>&#8212<%= link_to "Delete Recipe", dessert_recipe_path(@recipe), :method => :delete %>&#8212</li>
 </ul>
 <%else%>
 <%end%>
+</div>
 
 
-<h1><%=@recipe.name%>
-  <% if @recipe.users.include? current_user %>
-  <%= link_to "&hearts;".html_safe, remove_favorite_recipe_path(@recipe), method: :delete, class: "fav" %>
-  <% else %>
-  <%= link_to "&hearts;".html_safe, add_favorite_recipe_path(@recipe), method: :post, class: "no-fav" %>
-  <% end %>
-</h1>
-<p>Posted: <%= @recipe.created_at.strftime("%B %d, %Y") %></p>
-<img src="<%= @recipe.recipe_image %>">
-<p>Recipe by: <%= @recipe.user.username %></p>
+
+<div class="recipe_wrapper">
+  <div class="recipe_description">
+  <h1><%=@recipe.name%>
+    <% if @recipe.users.include? current_user %>
+    <%= link_to "&hearts;".html_safe, remove_favorite_recipe_path(@recipe), method: :delete, class: "fav" %>
+    <% else %>
+    <%= link_to "&hearts;".html_safe, add_favorite_recipe_path(@recipe), method: :post, class: "no-fav" %>
+    <% end %>
+  </h1>
+  <h4>Recipe by: <%= @recipe.user.username %>&nbsp; | &nbsp; <%= @recipe.created_at.strftime("%B %d, %Y") %></h4>
 <p><%= @recipe.description %></p>
+</div>
+<img class="recipe_image"src="<%= @recipe.recipe_image %>">
+
+</div>
 <p>Prep-time: <%= @recipe.preptime %>, Cook-time: <%= @recipe.cooktime %></p>
 <% @recipe.ingredients.each do |ingredient| %>
 <ul>

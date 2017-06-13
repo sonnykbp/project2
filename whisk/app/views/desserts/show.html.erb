@@ -12,7 +12,7 @@
 <div class="dessert_show_recipes">
 <% @dessert.recipes.each do |recipe| %>
   <div class="dessert_show_recipe_wrapper">
-  <img class="dessert_show_recipe" src="<%= recipe.recipe_image %>">
+  <a href="/desserts/<%=recipe.dessert_id%>/recipes/<%=recipe.id%>"><img class="dessert_show_recipe" src="<%= recipe.recipe_image %>"></a>
   <h4><%= link_to recipe.name, dessert_recipe_path(@dessert, recipe) %></h4>
 </div>
 <%end%>
