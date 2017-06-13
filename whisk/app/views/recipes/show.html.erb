@@ -33,7 +33,7 @@
 <%= link_to "Add review", new_dessert_recipe_review_path(@recipe.dessert_id, @recipe) %>
 
 <% @recipe.reviews.each do |review|%>
-<p><%= review.user.username.upcase %> &#8212 <%= review.created_at.strftime("%B %d, %Y") %> </p>
+<p><%= review.user.username.upcase %> &#8212 <%= review.created_at.strftime("%B %d, %Y @ %-I:%M%p") %> </p>
 <p><%= review.body %></p>
 <% if review.user == current_user %>
 <%= link_to "Edit review", edit_dessert_recipe_review_path(@recipe.dessert_id, @recipe, review) %>

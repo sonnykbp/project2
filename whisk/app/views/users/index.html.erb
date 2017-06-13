@@ -11,6 +11,6 @@
 <p>Here are your favorite recipes:</p>
 <% @favorite.each do |favorite| %>
   <ul>
-  <li><%= favorite.recipe.name%></li>
+  <li><%= link_to favorite.recipe.name, dessert_recipe_path(favorite.recipe.dessert_id, favorite.recipe)%></li>
 </ul>
 <%end %>
