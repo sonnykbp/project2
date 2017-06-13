@@ -44,21 +44,45 @@ img {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  width: 40%;
-  height: 200px;
+  width: 270px;
+  height: 210px;
+}
+
+.links {
+  border-top: 1px solid #DCDCDC;
+  border-bottom: 1px solid #DCDCDC;
+}
+
+.links li{
+  list-style: none;
+  padding-top: 10px;
 }
 
 .dessert_show_recipes h4{
-
   border: 0.5px solid #DCDCDC;
   border-top: none;
-  width: 40%;
+  width: 100%;
   margin: 0;
   padding: 10px;
 }
 
+
 .dessert_show_wrapper {
   display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: space-between;
+}
+
+.dessert_show_recipe_wrapper {
+  margin-right: 15px;
+  justify-content: space-around;
+
+}
+.dessert_show_recipes {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
 }
 
 .navbar-brand {

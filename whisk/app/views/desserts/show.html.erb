@@ -11,8 +11,10 @@
 <!-- <div class="dessert_show_hero" style="background-image: url('<%= @dessert.dessert_image %>')"></div> -->
 <div class="dessert_show_recipes">
 <% @dessert.recipes.each do |recipe| %>
+  <div class="dessert_show_recipe_wrapper">
   <img class="dessert_show_recipe" src="<%= recipe.recipe_image %>">
   <h4><%= link_to recipe.name, dessert_recipe_path(@dessert, recipe) %></h4>
+</div>
 <%end%>
 </div>
 </div>
