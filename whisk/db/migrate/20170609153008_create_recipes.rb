@@ -10,7 +10,7 @@ class CreateRecipes < ActiveRecord::Migration[5.1]
       t.string :recipe_image
       t.references :dessert, index: true, foreign_key: true, null: false
       t.references :user, index: true, foreign_key: true, null: false
-      t.date :postdate
+
       t.timestamps
     end
   end
