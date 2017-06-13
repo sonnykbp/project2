@@ -6,11 +6,13 @@
 </div>
 <%end%>
 
-
-<h3><%= @dessert.name %></h3>
-<img src="<%= @dessert.dessert_image %>">
-
+<h1><%= @dessert.name %></h1>
+<div class="dessert_show_wrapper">
+<!-- <div class="dessert_show_hero" style="background-image: url('<%= @dessert.dessert_image %>')"></div> -->
+<div class="dessert_show_recipes">
 <% @dessert.recipes.each do |recipe| %>
-  <p><%= link_to recipe.name, dessert_recipe_path(@dessert, recipe) %></p>
-  <img src="<%= recipe.recipe_image %>">
+  <img class="dessert_show_recipe" src="<%= recipe.recipe_image %>">
+  <h4><%= link_to recipe.name, dessert_recipe_path(@dessert, recipe) %></h4>
 <%end%>
+</div>
+</div>

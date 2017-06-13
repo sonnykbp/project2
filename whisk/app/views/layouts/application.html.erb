@@ -1,75 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Whisk</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<head>
+  <title>Whisk</title>
+  <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,700" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link href="cover.css" rel="stylesheet">
-  </head>
 
-  <body>
-    <div class="site-wrapper">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-      <div class="site-wrapper-inner">
+  <link rel="icon" href="../../favicon.ico">
+</head>
 
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand">Cover</h3>
-              <nav>
-                <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">Features</a></li>
-                  <li><a href="#">Contact</a></li>
+<body>
+  <header>
+    <div class="wrapper">
+      <div class="navbar-wrapper">
+        <div class="container">
+          <nav class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+              <div class="navbar-header">
+                <a class="navbar-brand" style="color: white" href="/">Whisk!</a>
+              </div>
+              <div>
+                <ul class="nav navbar-nav">
+                  <li ><%= link_to "Recipes", desserts_path %></li>
+                  <% if current_user %>
+                  <li><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></li>
+                  <li><%= link_to "Profile", users_index_path %></li>
+                  <% else %>
+                  <li><%= link_to 'Signup', new_user_registration_path %></li>
+                  <li><%= link_to 'Login', new_user_session_path %></li>
+                  <% end %>
                 </ul>
-              </nav>
+              </div>
             </div>
-          </div>
-
-          <div class="inner cover">
-            <h1 class="cover-heading">Cover your page.</h1>
-            <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-            <p class="lead">
-              <a href="#" class="btn btn-lg btn-default">Learn more</a>
-            </p>
-          </div>
-
-          <div class="mastfoot">
-            <div class="inner">
-              <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-            </div>
-          </div>
+          </nav>
 
         </div>
-
       </div>
+    </header>
+    <div class="container marketing">
 
-    <h1><%= link_to "Whisk!", root_path %></h1>
 
-    <div class="user-info">
-      <% if current_user %>
-        Welcome, <%= current_user.email%>,  <%= current_user.username%>,  <%= current_user.id%>
-        <%= link_to 'Signout', destroy_user_session_path, :method => :delete %>
-        <%= link_to "Profile", users_index_path %></li>
-      <% else %>
-        <%= link_to 'Signup', new_user_registration_path %>
-        <%= link_to 'Login', new_user_session_path %>
-      <% end %>
-    </div>
 
-  <nav>
-    <ul>
-      <li><%= link_to "All Desserts", desserts_path %></li>
-      <li><%= link_to "All Recipes", recipes_path %></li>
+              <p class="notice"><%= notice %></p>
+              <p class="alert"><%= alert %></p>
+              <%= yield %>
+          </div><!-- /.row -->
 
-    </ul>
-  </nav>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+
+
+
+<main>
+
+</main>
   </body>
-</html>
+  </html>

@@ -1,101 +1,11 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
-.navbar-brand {
-  font-family: 'Pacifico', cursive;
-  font-size: 28px;
-}
-
-header {
-  height: 400px;
-  margin-bottom: 20px;
-  background-image: url('http://sf.co.ua/15/04/wallpaper-1d9e82.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-
-}
-
-.wrapper {
-  background-color: rgba(0, 0, 0, 0.1);
-  height: 400px;
-}
-
-img {
-  /*width: auto;
-  max-width: 300px;
-  height: auto;
-  max-height: 250px;*/
-}
-
-.dessert_show_recipe {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 40%;
-  height: 200px;
-}
-
-.dessert_show_recipes h4{
-
-  border: 0.5px solid #DCDCDC;
-  border-top: none;
-  width: 40%;
-  margin: 0;
-  padding: 10px;
-}
-
-.dessert_show_wrapper {
-  display: flex;
-}
-
-.navbar-brand {
-color: white;
-}
-
-.img-circle {
-  border-radius: 5%;
-  width: auto;
-  max-width: 300px;
-  height: auto;
-  max-height: 250px;
-}
-
-a.fav {
-  text-decoration: none;
-  color: red;
-}
-
-a.no-fav {
-  text-decoration: none;
-  color: black;
-}
-
 /* GLOBAL STYLES
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 
 body {
   font-family: 'Dosis', sans-serif;
+  padding-bottom: 40px;
   color: #5a5a5a;
-  padding: 0;
-  margin: 0;
-}
-
-main {
-  margin: 40px;
 }
 
 
@@ -115,8 +25,6 @@ main {
 .navbar-wrapper > .container {
   padding-right: 0;
   padding-left: 0;
-
-
 }
 .navbar-wrapper .navbar {
   padding-right: 15px;
@@ -131,7 +39,10 @@ main {
 -------------------------------------------------- */
 
 /* Carousel base class */
-
+.carousel {
+  height: 500px;
+  margin-bottom: 60px;
+}
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
   z-index: 10;
@@ -199,10 +110,6 @@ main {
     padding-right: 0;
     padding-left: 0;
   }
-
-navbar-header {
-  text-align: center;
-}
 
   /* The navbar becomes detached from the top, so we round the corners */
   .navbar-wrapper .navbar {

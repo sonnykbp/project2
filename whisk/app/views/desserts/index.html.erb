@@ -1,9 +1,9 @@
-<h1>Desserts Index</h1>
-<div class="dessert_wrapper">
-<% @desserts.each do |dessert| %>
-  <div class="desserts">
-  <a href="/desserts/<%=dessert.id%>"><p><%= dessert.name %></p></a>
-  <a href="/desserts/<%=dessert.id%>"><img src="<%= dessert.dessert_image %>"></a>
-</div>
-<%end%>
+<div class="container marketing">
+  <h1>Recipes by Category:</h1>
+  <% @desserts.each do |dessert| %>
+    <div class="col-lg-4">
+      <a href="/desserts/<%=dessert.id%>"><img class="img-circle" src="<%= dessert.dessert_image %>"></a>
+      <a href="/desserts/<%=dessert.id%>"><h2><%= dessert.name %></h2></a>
+    </div>
+  <%end%>
 </div>
