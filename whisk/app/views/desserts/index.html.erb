@@ -1,6 +1,10 @@
 <div class="container marketing">
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec condimentum ligula ut felis auctor vestibulum. Proin in leo ullamcorper, tempor eros eu, suscipit nisi. Suspendisse massa nulla, condimentum sed libero sed, dignissim dictum sapien. Quisque molestie dui enim, at egestas sapien sodales in. Fusce vehicula arcu at sodales consequat.</p>
-  <h1>Recipes by Category:</h1>
+
+  <hr class="style_no_symbol">
+  <h1 class="index_h1">Recipes by Category</h1>
+  <hr class="style">
+  <br>
   <% @desserts.each do |dessert| %>
     <div class="col-lg-4">
       <a href="/desserts/<%=dessert.id%>"><img class="img-circle" src="<%= dessert.dessert_image %>"></a>

@@ -1,26 +1,63 @@
+<div class="form">
 <%= form_for [@dessert, @recipe] do |f| %>
 
+  <div class="form_left">
+  <div>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <br>
+  <%= f.text_area :name, size: "70x1" %>
+</div>
 
+  <div>
   <%= f.label :description %>
-  <%= f.text_field :description %>
+  <br>
+  <%= f.text_area :description, size: "70x6" %>
+  </div>
+  <br>
 
-  <%= f.label :ingredients %>
-  <%= f.text_field :ingredients %>
-
-  <%= f.label :direction %>
-  <%= f.text_field :direction %>
-
-  <%= f.label :preptime %>
+  <div>
+  <%= f.label :preptime %> (minutes)
+  <br>
   <%= f.text_field :preptime %>
+  </div>
+  <br>
 
-  <%= f.label :cooktime %>
+  <div>
+  <%= f.label :cooktime %> (minutes)
+  <br>
   <%= f.text_field :cooktime %>
+  </div>
+  <br>
+</div>
 
+<div class="form_right">
+  <div>
+  <%= f.label :ingredients %> - Separate each ingredients by commas.
+  <br>
+  <%= f.text_area :ingredients, size: "100x10" %>
+  </div>
+  <br>
+
+  <div>
+  <%= f.label :direction %>
+  <br>
+  <%= f.text_area :direction, size: "100x10" %>
+  </div>
+  <br>
+
+
+
+  <div>
   <%= f.label :recipe_image %>
-  <%= f.text_field :recipe_image %>
+  <br>
+  <%= f.text_field :recipe_image, size: "100x1"  %>
+  </div>
+  <br>
+
 
   <%= f.submit %>
 
+</div>
+
 <% end %>
+</div>

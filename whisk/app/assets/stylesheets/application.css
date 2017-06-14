@@ -40,6 +40,64 @@ img {
   max-height: 250px;*/
 }
 
+p {
+  font-size: 18px;
+  line-height: 26px;
+}
+
+em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+h1, h2, h3, h4 {
+  color: #1cb0a1;
+}
+
+hr.style_no_symbol {
+  padding: 0;
+  border: none;
+  border-top: medium double grey;
+  color: #1cb0a1;
+}
+
+hr.style {
+    padding: 0;
+    border: none;
+    border-top: medium double grey;
+    color: #1cb0a1;
+    text-align: center;
+
+}
+hr.style:after {
+    content: "w";
+    display: inline-block;
+    position: relative;
+    top: -0.9em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: white;
+}
+
+.index_h1 {
+  text-align: center;
+}
+
+
+.form_right {
+  float: right;
+  margin: 0;
+  padding: 0;
+
+}
+
+.form_left {
+  float: left;
+  margin: 0;
+  padding: 0;
+
+}
+
 .dessert_show_recipe {
   background-size: cover;
   background-repeat: no-repeat;
@@ -49,8 +107,8 @@ img {
 }
 
 .links {
-  border-top: 1px solid #DCDCDC;
-  border-bottom: 1px solid #DCDCDC;
+  /*border-top: 1px solid #DCDCDC;
+  border-bottom: 1px solid #DCDCDC;*/
   text-align: center;
 }
 
@@ -120,17 +178,23 @@ a.no-fav {
 
 .recipe_wrapper {
   display: flex;
+  border-bottom: 0.5px solid #DCDCDC;
+}
+
+li {
+  font-size: 18px;
 }
 
 .recipe_description {
-  width: 40%;
+  width: 60%;
+  padding-right: 50px;
   /*border: 0.5px solid #DCDCDC;
   border-right: none;*/
 
 }
 
 .recipe_image {
-  width: 60%;
+  width: 40%;
 
 }
 

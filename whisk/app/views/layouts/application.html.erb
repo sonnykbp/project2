@@ -6,7 +6,6 @@
   <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,700" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
@@ -28,7 +27,7 @@
                   <li ><%= link_to "Recipes", desserts_path %></li>
                   <% if current_user %>
                   <li><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></li>
-                  <li><%= link_to "Profile", users_index_path %></li>
+                  <li><%= link_to "My Profile", users_index_path %></li>
                   <% else %>
                   <li><%= link_to 'Signup', new_user_registration_path %></li>
                   <li><%= link_to 'Login', new_user_session_path %></li>

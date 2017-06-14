@@ -1,9 +1,11 @@
 <div class="links">
+  <hr class="style_no_symbol">
 <% if @recipe.user == current_user %>
 <ul>
   <li>&#8212<%= link_to "Edit Recipe", edit_dessert_recipe_path(@recipe.dessert_id, @recipe) %>&#8212</li>
   <li>&#8212<%= link_to "Delete Recipe", dessert_recipe_path(@recipe), :method => :delete %>&#8212</li>
 </ul>
+<hr class="style">
 <%else%>
 <%end%>
 </div>
@@ -21,21 +23,30 @@
   </h1>
   <h4>Recipe by: <%= @recipe.user.username %>&nbsp; | &nbsp; <%= @recipe.created_at.strftime("%B %d, %Y") %></h4>
 <p><%= @recipe.description %></p>
+<p><em>Prep-time: <%= @recipe.preptime %> min , Cook-time: <%= @recipe.cooktime %> min</em></p>
 </div>
 <img class="recipe_image"src="<%= @recipe.recipe_image %>">
 
 </div>
-<p>Prep-time: <%= @recipe.preptime %>, Cook-time: <%= @recipe.cooktime %></p>
+
+<h2>Ingredients</h2>
+<hr>
 <% @recipe.ingredients.each do |ingredient| %>
 <ul>
   <li><%= ingredient %></li>
 </ul>
 <%end%>
+
+<hr>
+<h2>Directions</h2>
+<hr>
 <p><%= @recipe.direction %></p>
 
 
 <div class="review_wrapper">
-<h2>Reviews:</h2>
+<hr>
+<h2>Reviews</h2>
+<hr>
 
 <%= link_to "Add review", new_dessert_recipe_review_path(@recipe.dessert_id, @recipe) %>
 
