@@ -1,16 +1,31 @@
-<h2>Welcome <%= current_user.username %></h2>
-<p>Here are your personal recipes:</p>
+<h1>Welcome <%= current_user.username %>! What will you make today?</h1>
 
+<hr>
+<h2>Your personal recipes:</h2>
+<hr>
+
+<div class="dessert_show_wrapper">
+<div class="dessert_show_recipes">
 <% @recipe.each do |recipe| %>
-  <ul>
-  <li><%= link_to recipe.name, dessert_recipe_path(recipe.dessert_id, recipe) %></li>
-</ul>
+<div class="dessert_show_recipe_wrapper">
+  <a href="/desserts/<%=recipe.dessert_id%>/recipes/<%=recipe.id%>"><img class="dessert_show_recipe" src="<%= recipe.recipe_image %>"></a>
+  <h4><%= link_to recipe.name, dessert_recipe_path(recipe.dessert_id, recipe) %></h4>
+</div>
 <%end %>
+</div>
+</div>
 
 
-<p>Here are your favorite recipes:</p>
+<hr>
+<h2>Your favorite recipes:</h2>
+<hr>
+<div class="dessert_show_wrapper">
+<div class="dessert_show_recipes">
 <% @favorite.each do |favorite| %>
-  <ul>
-  <li><%= link_to favorite.recipe.name, dessert_recipe_path(favorite.recipe.dessert_id, favorite.recipe)%></li>
-</ul>
+<div class="dessert_show_recipe_wrapper">
+  <a href="/desserts/<%=favorite.recipe.dessert_id%>/recipes/<%=favorite.recipe.id%>"><img class="dessert_show_recipe" src="<%= favorite.recipe.recipe_image %>"></a>
+  <h4><%= link_to favorite.recipe.name, dessert_recipe_path(favorite.recipe.dessert_id, favorite.recipe)%></h4>
+</div>
 <%end %>
+</div>
+</div>
