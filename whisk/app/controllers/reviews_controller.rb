@@ -44,7 +44,7 @@ class ReviewsController < ApplicationController
     else
       flash[:alert] = "You can't delete this!"
     end
-    redirect_to dessert_recipe_path(@recipe.dessert_id, @recipe), notice: "You deleted your comment."
+    redirect_to dessert_recipe_path(@recipe.dessert_id, @recipe), alert: "You deleted your comment."
   end
 
   private

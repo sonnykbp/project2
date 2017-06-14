@@ -1,15 +1,19 @@
-<% if current_user %>
+
 <div class="links">
   <hr class="style_no_symbol">
   <h1 class="index_h1"><%= @dessert.name %></h1>
+  <% if current_user %>
   <ul>
 <li>&#8212<%= link_to "Add Recipe", new_dessert_recipe_path(@dessert) %>&#8212</li>
   </ul>
 
-  <hr class="style">
+
 </div>
 <%end%>
+<hr class="style">
 
+<br>
+<br>
 
 <div class="dessert_show_wrapper">
 <!-- <div class="dessert_show_hero" style="background-image: url('<%= @dessert.dessert_image %>')"></div> -->

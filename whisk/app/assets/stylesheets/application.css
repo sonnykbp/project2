@@ -79,6 +79,24 @@ hr.style:after {
     background: white;
 }
 
+.notice {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  color: green;
+  margin-top: 5px;
+}
+
+.alert {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  color: red;
+  margin-top: 5px;
+}
+
 .index_h1 {
   text-align: center;
 }
@@ -179,6 +197,7 @@ a.no-fav {
 .recipe_wrapper {
   display: flex;
   border-bottom: 0.5px solid #DCDCDC;
+  border-top: 0.5px solid #DCDCDC;
 }
 
 li {

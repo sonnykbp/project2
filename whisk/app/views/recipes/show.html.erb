@@ -1,6 +1,7 @@
 <div class="links">
-  <hr class="style_no_symbol">
+
 <% if @recipe.user == current_user %>
+<hr class="style_no_symbol">
 <ul>
   <li>&#8212<%= link_to "Edit Recipe", edit_dessert_recipe_path(@recipe.dessert_id, @recipe) %>&#8212</li>
   <li>&#8212<%= link_to "Delete Recipe", dessert_recipe_path(@recipe), :method => :delete %>&#8212</li>
@@ -10,6 +11,8 @@
 <%end%>
 </div>
 
+<br>
+<br>
 
 
 <div class="recipe_wrapper">
@@ -46,16 +49,17 @@
 <div class="review_wrapper">
 <hr>
 <h2>Reviews</h2>
+&#8212<%= link_to "Add review", new_dessert_recipe_review_path(@recipe.dessert_id, @recipe) %>&#8212
 <hr>
 
-<%= link_to "Add review", new_dessert_recipe_review_path(@recipe.dessert_id, @recipe) %>
+
 
 <% @recipe.reviews.each do |review|%>
-<p><%= review.user.username.upcase %> &#8212 <%= review.created_at.strftime("%B %d, %Y @ %-I:%M%p") %> </p>
+<p><em><%= review.user.username.upcase %></em> &#8212 <%= review.created_at.strftime("%B %d, %Y @ %-I:%M%p") %> </p>
 <p><%= review.body %></p>
 <% if review.user == current_user %>
-<%= link_to "Edit review", edit_dessert_recipe_review_path(@recipe.dessert_id, @recipe, review) %>
-<%= link_to "Delete review", dessert_recipe_review_path(@recipe.dessert_id, @recipe, review), :method => :delete %>
+&#8212<%= link_to "Edit review", edit_dessert_recipe_review_path(@recipe.dessert_id, @recipe, review) %>&#8212 &nbsp;
+&#8212<%= link_to "Delete review", dessert_recipe_review_path(@recipe.dessert_id, @recipe, review), :method => :delete %>&#8212
 <br>
 <%else%>
 <%end%>

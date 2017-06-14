@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
   def add_favorite
     @recipe = Recipe.find(params[:id])
     @recipe.favorites.create(user: current_user)
-    redirect_to dessert_recipe_path(@recipe.dessert_id, @recipe), notice: "You added a new favorite recipe!"
+    redirect_to dessert_recipe_path(@recipe.dessert_id, @recipe), notice: "You added #{@recipe.name} to your favorite!"
 
   end
 
@@ -12,7 +12,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @favorite = Favorite.find_by(user: current_user, recipe_id: params[:id])
     @favorite.destroy
-    redirect_to dessert_recipe_path(@recipe.dessert_id, @recipe), notice: "You removed a recipe from favorite!"
+    redirect_to dessert_recipe_path(@recipe.dessert_id, @recipe), notice: "You removed #{@recipe.name} from your favorite!"
   end
   # index
   def index
@@ -22,7 +22,7 @@ class RecipesController < ApplicationController
   #show
   def show
     @recipe = Recipe.find(params[:id])
-    # @review = Review.find(params[:id])
+    @review = Review.find(params[:id])
   end
 
   # new
@@ -36,7 +36,7 @@ class RecipesController < ApplicationController
     @dessert = Dessert.find(params[:dessert_id])
     # @user = Recipe.find(params[:user])
     @recipe = @dessert.recipes.create!(recipe_params.merge(user: current_user, ingredients: params[:recipe][:ingredients].split(",")))
-    redirect_to dessert_path(@dessert), notice: "You added a new recipe."
+    redirect_to dessert_path(@dessert), notice: "You added a new recipe to #{@dessert.name}."
   end
 
   # edit
@@ -54,7 +54,7 @@ class RecipesController < ApplicationController
     else
       flash[:alert] = "You can't update this!"
     end
-    redirect_to dessert_recipe_path(@recipe.dessert_id, @recipe), notice: "You updated your comment."
+    redirect_to dessert_recipe_path(@recipe.dessert_id, @recipe), notice: "You updated #{@recipe.name}."
   end
 
   # destroy
