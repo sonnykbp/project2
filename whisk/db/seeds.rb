@@ -58,6 +58,12 @@ Allow the cake to cool completely rolled up in the towel. I stick mine in the re
 Remove the cake roll from the refrigerator and allow to sit on the counter for a few minutes to warm up as you prepare the frosting.", preptime: 25, cooktime: 180, recipe_image: "http://www.worthwhisking.com/wp-content/uploads/2015/02/IMG_2118.jpg", dessert: cakes, user: susan)
 
 
+magic_bars = Recipe.create!(name: "Magic Bars", description: "This bar cookie is an old fashioned favorite. Chocolate chips, nuts and coconut are set in a caramelized layer on top of a graham cracker crust.", ingredients: ["1/2 cup butter or margarine, melted", "1 1/2 cups graham cracker crumbs", "1 (14 ounce) can Sweetened Condensed Milk", "2 cups semisweet chocolate chips", "1 1/3 cups flaked coconut", "1 cup chopped nuts"],
+direction: "Heat oven to 350 degrees F (325 degrees for glass dish). Coat 13x9-inch baking pan with no-stick cooking spray.
+Combine graham cracker crumbs and butter. Press into bottom of prepared pan. Pour sweetened condensed milk evenly over crumb mixture. Layer evenly with chocolate chips, coconut and nuts. Press down firmly with a fork.
+Bake 25 minutes or until lightly browned. Cool. Cut into bars or diamonds. Store covered at room temperature.", preptime: 15, cooktime: 30, recipe_image: "http://blog.fatfreevegan.com/images/magic-cookie2.jpg", dessert: brownies_bars, user: sonny)
+
+
 first_review = Review.create!(body: "Awesome recipe!", recipe: brown_butter_cookies, user: sonny)
 second_review = Review.create!(body: "I love how moist it is. Absolutely delicious!", recipe: lemon_strawberry_crumb_bars, user: danielle)
 third_review = Review.create!(body: "A little too sweet for me so I decreased the sugar and added more salt.", recipe: funfetti_cupcakes, user: jenny)
@@ -67,3 +73,7 @@ sixth_review = Review.create!(body: "Didn't come out as perfect as I thought but
 seventh_review = Review.create!(body: "Can I substitue butter for olive/vegetable oil?", recipe: brown_butter_cookies, user: susan)
 eight_review = Review.create!(body: "Made it for my wife for diner last night. We ate the whole thing lol", recipe: redvelvet_roll_cake, user: matt)
 ninth_review = Review.create!(body: "Thanks for the great instructions! Love all your recipes ;)", recipe: jalapeno_cornbread_muffins, user: sonny)
+tenth_review = Review.create!(body: "Everyone loves this, it's addictive. Some hints, when doing the butter/graham crust, add 1/4 teasp. cinnamon.", recipe: magic_bars, user: danielle)
+eleventh_review = Review.create!(body: "I used a combination of chocolate chips and butterscotch chips, and walnuts. I pre-mixed these along with the coconut, and poured the mixture over the condensed milk.", recipe: magic_bars, user: jenny)
+twelvth_review = Review.create!(body: "These are fabulous. However, I increased the crust to 2 1/2 cups of crumbs and added a little more butter to the original recipe.", recipe: magic_bars, user: matt)
+thirteenth_review = Review.create!(body: "I volunteered to bring something for our annual Christmas bazaar for church - even though I don't bake much any more. These were so easy to make!", recipe: magic_bars, user: susan)

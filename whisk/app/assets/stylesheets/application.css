@@ -196,6 +196,7 @@ a.no-fav {
   display: flex;
   border-bottom: 0.5px solid #DCDCDC;
   border-top: 0.5px solid #DCDCDC;
+  height: auto;
 }
 
 li {
