@@ -9,7 +9,7 @@
   <br>
   <% @desserts.each do |dessert| %>
     <div class="col-lg-4">
-      <a href="/desserts/<%=dessert.id%>"><img class="img-circle" src="<%= dessert.dessert_image %>"></a>
+      <a href="/desserts/<%=dessert.id%>"><img class="img-circle" alt="desserts" src="<%= dessert.dessert_image %>"></a>
       <a href="/desserts/<%=dessert.id%>"><h2><%= dessert.name %></h2></a>
     </div>
   <%end%>
