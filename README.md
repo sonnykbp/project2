@@ -4,9 +4,9 @@ Whisk! is a baking recipe sharing full stack rails application. All users are ab
 
 # TECHNOLOGIES
 
--Rails
--Ruby
--Bootstrap
+- Rails
+- Ruby
+- Bootstrap
 
 # APPROACH
 
