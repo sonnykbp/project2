@@ -22,7 +22,7 @@ class RecipesController < ApplicationController
   #show
   def show
     @recipe = Recipe.find(params[:id])
-    @review = Review.find(params[:id])
+    # @review = Review.find(params[:id])
   end
 
   # new

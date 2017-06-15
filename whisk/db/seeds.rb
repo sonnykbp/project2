@@ -12,7 +12,7 @@ Recipe.destroy_all
 Review.destroy_all
 
 
-brownies_bars = Dessert.create(name: "Brownies & Bars", dessert_image: "https://images-gmi-pmc.edge-generalmills.com/5c41d5f9-aeac-4de4-a502-2838fee0ad8b.jpg")
+brownies_bars = Dessert.create(name: "Brownies & Bars", dessert_image: "https://www.gimmesomeoven.com/wp-content/uploads/2013/07/Peanut-Butter-Fudge-Brownies-1.jpg")
 cookies = Dessert.create(name: "Cookies", dessert_image: "http://images.media-allrecipes.com/userphotos/560x315/1107530.jpg")
 cupcakes = Dessert.create(name: "Cupcakes", dessert_image: "https://www.browneyedbaker.com/wp-content/uploads/2010/11/red-velvet-cupcakes-32-600.jpg")
 cakes = Dessert.create(name: "Cakes", dessert_image: "https://www.bbcgoodfood.com/sites/default/files/styles/category_retina/public/recipe-collections/collection-image/2013/05/chocolate-and-lime-cake.jpg?itok=UydD8bk5")
