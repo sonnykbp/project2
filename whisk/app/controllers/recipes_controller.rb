@@ -14,39 +14,37 @@ class RecipesController < ApplicationController
     @favorite.destroy
     redirect_to dessert_recipe_path(@recipe.dessert_id, @recipe), notice: "You removed #{@recipe.name} from your favorite!"
   end
-  # index
+
   def index
     @recipes = Recipe.all
   end
 
-  #show
+
   def show
     @recipe = Recipe.find(params[:id])
-    # @review = Review.find(params[:id])
   end
 
-  # new
+
   def new
     @dessert = Dessert.find(params[:dessert_id])
     @recipe = @dessert.recipes.new
   end
 
-  # create
+
   def create
     @dessert = Dessert.find(params[:dessert_id])
-    # @user = Recipe.find(params[:user])
     @recipe = @dessert.recipes.create!(recipe_params.merge(user: current_user, ingredients: params[:recipe][:ingredients].split(",")))
     redirect_to dessert_path(@dessert), notice: "You added a new recipe to #{@dessert.name}."
   end
 
-  # edit
+
   def edit
     @dessert = Dessert.find(params[:dessert_id])
     @recipe = Recipe.find(params[:id])
 
   end
 
-  # update
+
   def update
     @recipe = Recipe.find(params[:id])
     if @recipe.user == current_user
@@ -57,7 +55,7 @@ class RecipesController < ApplicationController
     redirect_to dessert_recipe_path(@recipe.dessert_id, @recipe), notice: "You updated #{@recipe.name}."
   end
 
-  # destroy
+
   def destroy
     @recipe = Recipe.find(params[:id])
     if @recipe.user == current_user

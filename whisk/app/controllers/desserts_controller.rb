@@ -2,7 +2,6 @@ class DessertsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   def index
       @desserts = Dessert.all
-      # @desserts = Dessert.all.order('name ASC')
     end
 
     def show

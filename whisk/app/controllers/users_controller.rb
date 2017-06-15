@@ -4,12 +4,6 @@ class UsersController < ApplicationController
   def index
     @recipe = Recipe.where(user_id: current_user)
     @favorite = Favorite.where(user_id: current_user)
-
   end
 
-  def show
-  end
-
-  def edit
-  end
 end
